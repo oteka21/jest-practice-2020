@@ -26,4 +26,9 @@ describe("TEsting number functions", () => {
     const result = sum(1,2)
     expect(result).toBeLessThanOrEqual(3)
   })
+
+  test("Flotantes" ,() => {
+    const result = sum(0.2,0.2)
+    expect(result).toBeCloseTo(0.4)
+  })
 })

@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack --mode production",
     "test": "jest --notify",
-    "test:watch": "jest --watch"
+    "test:watch": "NODE_ENV=development jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +28,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "babel-plugin-react-remove-properties": "0.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",

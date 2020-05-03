@@ -4,6 +4,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { mainReducer } from './redux/reducer'
 import { App } from './containers/app'
+import { GlobalStyles } from './containers/styles'
 import initialState from '../initialState.json'
 
 const store = createStore(mainReducer,
@@ -13,5 +14,6 @@ const store = createStore(mainReducer,
 
 render(
 <Provider store={store}>
+  <GlobalStyles />
   <App />
 </Provider>, document.querySelector('#app'))

@@ -3,7 +3,7 @@
 ## scripts 
 
 ```bash
-test
-test:watch
-test:coverage
+npm run test
+npm run test:watch
+npm run test:coverage
 ```

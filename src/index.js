@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { mainReducer } from './redux/reducer'
+import { App } from './containers/app'
 import initialState from '../initialState.json'
 
 const store = createStore(mainReducer,
@@ -12,5 +13,5 @@ const store = createStore(mainReducer,
 
 render(
 <Provider store={store}>
-  <h1>Hola Perras</h1>
+  <App />
 </Provider>, document.querySelector('#app'))

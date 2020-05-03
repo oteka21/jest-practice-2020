@@ -16,6 +16,12 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: [
+      '.js',
+      '.jsx'
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'),

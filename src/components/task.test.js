@@ -1,24 +1,26 @@
 import React from 'react'
-import {  findByTestAttr } from '../__test__/utils'
+import {  findByTestAttr, checkProps } from '../__test__/utils'
 import { Task } from './task'
 import { shallow } from 'enzyme'
 
 
-const props = {
-  id: 1,
+const defaultProps = {
   title: "Learn jest",
   status: "assigned"
 }
 
-const  setup  = (props  = {}, state=  null) => {
-	const  wrapper  =  shallow(<Task  {...props} />)
-	if (state) wrapper.setState(state)
-	return  wrapper
+const  setup  = (props  = {}) => {
+	const  mixedProps  = {...defaultProps, ...props}
+	return  shallow(<Task  {...mixedProps}/>)
 }
 
 describe("<task />", () => {
 
-  const wrapper = setup(props)
+  const wrapper = setup()
+
+  test("Does not throw warning with expected props", () => {
+    checkProps(Task, defaultProps)
+  })
 
   test("render container", () => {
     const component = findByTestAttr(wrapper, "container")
@@ -27,7 +29,7 @@ describe("<task />", () => {
 
   test("Render the task Title", () => {
     const component = findByTestAttr(wrapper, "task-title")
-    expect(component.text()).toEqual(props.title)
+    expect(component.text()).toEqual(defaultProps.title)
   })
 
   test("resnder te expected text in button (uncomplete)", () => {
@@ -36,7 +38,7 @@ describe("<task />", () => {
   })
 
   test("resnder te expected text in button (complete)", () => {
-    const wrapper = setup ({...props, status: "complete"})
+    const wrapper = setup ({status: "complete"})
     const component = findByTestAttr(wrapper, "task-button")
     expect(component.text()).toEqual("Set to Assigned")
   })

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Title, Button } from './task.styles'
+import PropTypes from 'prop-types'
 
 export function Task(props){
   return <Container data-test="container">
@@ -14,4 +15,9 @@ export function Task(props){
       </Button>
     </div>
   </Container>
+}
+
+Task.propTypes = {
+  title: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired
 }

@@ -25,13 +25,19 @@ describe("<task />", () => {
     expect(component.length).toBe(1)
   })
 
-  test("Render the task titile", () => {
+  test("Render the task Title", () => {
     const component = findByTestAttr(wrapper, "task-title")
     expect(component.text()).toEqual(props.title)
   })
 
-  test("resnder te expected text in button", () => {
+  test("resnder te expected text in button (uncomplete)", () => {
     const component = findByTestAttr(wrapper, "task-button")
     expect(component.text()).toEqual("Set to complete")
+  })
+
+  test("resnder te expected text in button (complete)", () => {
+    const wrapper = setup ({...props, status: "complete"})
+    const component = findByTestAttr(wrapper, "task-button")
+    expect(component.text()).toEqual("Set to Assigned")
   })
 })

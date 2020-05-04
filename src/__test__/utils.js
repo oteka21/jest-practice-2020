@@ -14,9 +14,9 @@ export const  setup  = (Component, props  = {}, state=  null) => {
 	return  wrapper
 }
 
-const middlewares = []
 
 export  const  storeFactory  = (initialState) => {
+  const middlewares = []
 	const  createStoreWithMiddleware  =  applyMiddleware(...middlewares)(createStore)
 	return  createStoreWithMiddleware(mainReducer, initialState)
 }

@@ -3,19 +3,16 @@
     {
       "id": 1,
       "title": "Learn jest",
-      "time": "6h",
       "status": "assigned"
     },
     {
       "id": 2,
       "title": "Clean desk",
-      "time": "10m",
-      "status": "ongoin"
+      "status": "assigned"
     },
     {
       "id": 3,
       "title": "cook the dinner",
-      "time": "1h",
       "status": "complete"
     }
   ]

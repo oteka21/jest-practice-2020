@@ -1,19 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import { mainReducer } from './redux/reducer'
+// import { Provider } from 'react-redux'
 import { App } from './containers/app'
 import { GlobalStyles } from './containers/styles'
-import initialState from '../initialState.json'
+// import { store } from './redux'
 
-const store = createStore(mainReducer,
-    initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 render(
-<Provider store={store}>
+<>
   <GlobalStyles />
   <App />
-</Provider>, document.querySelector('#app'))
+</>, document.querySelector('#app'))

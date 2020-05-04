@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body{
-    background: #2F2F33;
+    background: #1D1E20;
     color: #D8D8D8;
   }
 `
@@ -37,4 +37,12 @@ export const Container = styled.div`
 export const Title = styled.h1`
   text-align: center;
   width: 100%;
+`
+
+export const TaskContainer = styled.div`
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  
 `

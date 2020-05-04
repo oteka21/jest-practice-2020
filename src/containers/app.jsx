@@ -10,7 +10,7 @@ export function App ({tasks = initialState.tasks}){
       <Title data-test="title">Manage your tasks</Title>
       <TaskContainer data-test="task-container">
         {
-          tasks.map(item => <Task key={item.id} {...item} />)
+          tasks.map((item, index) => <Task key={index} {...item} />)
         }
       </TaskContainer>
     </Container>;

@@ -1,17 +1,14 @@
 {
   "tasks": [
     {
-      "id": 1,
       "title": "Learn jest",
       "status": "assigned"
     },
     {
-      "id": 2,
       "title": "Clean desk",
       "status": "assigned"
     },
     {
-      "id": 3,
       "title": "cook the dinner",
       "status": "complete"
     }
